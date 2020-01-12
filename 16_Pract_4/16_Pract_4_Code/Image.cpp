@@ -82,7 +82,6 @@ void Image::setRescaleParameters(float rescaleSlope, float rescaleIntercept, int
         float y = defaultData[i * 5 + 1];
         float color = defaultData[i * 5 + 2];
 
-
         float modifiedColor = color;
         if (modifiedColor > upperBoundScaled)
             modifiedColor = upperBoundScaled;

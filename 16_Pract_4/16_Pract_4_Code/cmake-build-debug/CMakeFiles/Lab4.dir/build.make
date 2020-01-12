@@ -109,18 +109,18 @@ CMakeFiles/Lab4.dir/TextRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab4.dir/TextRenderer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/TextRenderer.cpp" -o CMakeFiles/Lab4.dir/TextRenderer.cpp.s
 
-CMakeFiles/Lab4.dir/DicomDataReader.cpp.o: CMakeFiles/Lab4.dir/flags.make
-CMakeFiles/Lab4.dir/DicomDataReader.cpp.o: ../DicomDataReader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab4.dir/DicomDataReader.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab4.dir/DicomDataReader.cpp.o -c "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomDataReader.cpp"
+CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o: CMakeFiles/Lab4.dir/flags.make
+CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o: ../DicomFileWrapper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o -c "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.cpp"
 
-CMakeFiles/Lab4.dir/DicomDataReader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab4.dir/DicomDataReader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomDataReader.cpp" > CMakeFiles/Lab4.dir/DicomDataReader.cpp.i
+CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.cpp" > CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.i
 
-CMakeFiles/Lab4.dir/DicomDataReader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab4.dir/DicomDataReader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomDataReader.cpp" -o CMakeFiles/Lab4.dir/DicomDataReader.cpp.s
+CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.cpp" -o CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.s
 
 # Object files for target Lab4
 Lab4_OBJECTS = \
@@ -128,7 +128,7 @@ Lab4_OBJECTS = \
 "CMakeFiles/Lab4.dir/Image.cpp.o" \
 "CMakeFiles/Lab4.dir/Shader.cpp.o" \
 "CMakeFiles/Lab4.dir/TextRenderer.cpp.o" \
-"CMakeFiles/Lab4.dir/DicomDataReader.cpp.o"
+"CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o"
 
 # External object files for target Lab4
 Lab4_EXTERNAL_OBJECTS =
@@ -137,7 +137,7 @@ Lab4: CMakeFiles/Lab4.dir/main.cpp.o
 Lab4: CMakeFiles/Lab4.dir/Image.cpp.o
 Lab4: CMakeFiles/Lab4.dir/Shader.cpp.o
 Lab4: CMakeFiles/Lab4.dir/TextRenderer.cpp.o
-Lab4: CMakeFiles/Lab4.dir/DicomDataReader.cpp.o
+Lab4: CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o
 Lab4: CMakeFiles/Lab4.dir/build.make
 Lab4: /usr/lib/libOpenGL.so
 Lab4: /usr/lib/libGLX.so

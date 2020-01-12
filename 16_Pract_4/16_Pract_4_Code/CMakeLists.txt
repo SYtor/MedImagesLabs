@@ -3,7 +3,7 @@ project(Lab4)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Lab4 main.cpp Image.cpp Image.h Shader.cpp Shader.h TextRenderer.cpp TextRenderer.h Renderable.h DicomDataReader.cpp DicomDataReader.h)
+add_executable(Lab4 main.cpp Image.cpp Image.h Shader.cpp Shader.h TextRenderer.cpp TextRenderer.h Renderable.h DicomFileWrapper.cpp DicomFileWrapper.h)
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)

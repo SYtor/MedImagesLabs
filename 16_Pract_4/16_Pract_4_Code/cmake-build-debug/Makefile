@@ -123,32 +123,32 @@ Lab4/fast:
 	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/build
 .PHONY : Lab4/fast
 
-DicomDataReader.o: DicomDataReader.cpp.o
+DicomFileWrapper.o: DicomFileWrapper.cpp.o
 
-.PHONY : DicomDataReader.o
+.PHONY : DicomFileWrapper.o
 
 # target to build an object file
-DicomDataReader.cpp.o:
-	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/DicomDataReader.cpp.o
-.PHONY : DicomDataReader.cpp.o
+DicomFileWrapper.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o
+.PHONY : DicomFileWrapper.cpp.o
 
-DicomDataReader.i: DicomDataReader.cpp.i
+DicomFileWrapper.i: DicomFileWrapper.cpp.i
 
-.PHONY : DicomDataReader.i
+.PHONY : DicomFileWrapper.i
 
 # target to preprocess a source file
-DicomDataReader.cpp.i:
-	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/DicomDataReader.cpp.i
-.PHONY : DicomDataReader.cpp.i
+DicomFileWrapper.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.i
+.PHONY : DicomFileWrapper.cpp.i
 
-DicomDataReader.s: DicomDataReader.cpp.s
+DicomFileWrapper.s: DicomFileWrapper.cpp.s
 
-.PHONY : DicomDataReader.s
+.PHONY : DicomFileWrapper.s
 
 # target to generate assembly for a file
-DicomDataReader.cpp.s:
-	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/DicomDataReader.cpp.s
-.PHONY : DicomDataReader.cpp.s
+DicomFileWrapper.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab4.dir/build.make CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.s
+.PHONY : DicomFileWrapper.cpp.s
 
 Image.o: Image.cpp.o
 
@@ -267,9 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Lab4"
 	@echo "... edit_cache"
-	@echo "... DicomDataReader.o"
-	@echo "... DicomDataReader.i"
-	@echo "... DicomDataReader.s"
+	@echo "... DicomFileWrapper.o"
+	@echo "... DicomFileWrapper.i"
+	@echo "... DicomFileWrapper.s"
 	@echo "... Image.o"
 	@echo "... Image.i"
 	@echo "... Image.s"

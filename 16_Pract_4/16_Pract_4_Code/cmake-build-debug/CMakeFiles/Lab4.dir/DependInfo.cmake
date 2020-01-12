@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomDataReader.cpp" "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/DicomDataReader.cpp.o"
+  "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.cpp" "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/DicomFileWrapper.cpp.o"
   "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Image.cpp" "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/Image.cpp.o"
   "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Shader.cpp" "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/Shader.cpp.o"
   "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/TextRenderer.cpp" "/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/TextRenderer.cpp.o"

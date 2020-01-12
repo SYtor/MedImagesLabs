@@ -6,9 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Image.cpp
-Image.h
-/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Image.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.cpp
+DicomFileWrapper.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.h
+iostream
+-
+dcmtk/dcmdata/dctk.h
+-
+dcmtk/dcmimgle/dcmimage.h
+-
 
 /home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Image.h
 GL/glew.h
@@ -34,5 +42,39 @@ glm/glm.hpp
 glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
+-
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/TextRenderer.h
+vector
+-
+string
+-
+Shader.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Shader.h
+ft2build.h
+-
+Renderable.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Renderable.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/main.cpp
+GL/glew.h
+-
+GL/freeglut.h
+-
+dcmtk/dcmimgle/dcmimage.h
+-
+iostream
+-
+Image.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/Image.h
+TextRenderer.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/TextRenderer.h
+DicomFileWrapper.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/DicomFileWrapper.h
+
+/usr/include/freetype2/freetype/config/ftheader.h
+
+/usr/include/freetype2/ft2build.h
+freetype/config/ftheader.h
 -
 

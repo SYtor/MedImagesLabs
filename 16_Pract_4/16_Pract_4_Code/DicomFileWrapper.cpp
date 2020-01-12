@@ -1,6 +1,6 @@
-#include "DicomDataReader.h"
+#include "DicomFileWrapper.h"
 
-DicomDataReader::DicomDataReader(const std::string &imagePath) {
+DicomFileWrapper::DicomFileWrapper(const std::string &imagePath) {
 
     dcmFileFormat = new DcmFileFormat();
     dcmFileFormat->loadFile(imagePath.c_str());
@@ -13,26 +13,26 @@ DicomDataReader::DicomDataReader(const std::string &imagePath) {
         throw std::runtime_error("Image not supported");
 }
 
-int DicomDataReader::getImageWidth() { return (int) dicomImage->getWidth(); }
-int DicomDataReader::getImageHeight() { return (int) dicomImage->getHeight(); }
+int DicomFileWrapper::getImageWidth() { return (int) dicomImage->getWidth(); }
+int DicomFileWrapper::getImageHeight() { return (int) dicomImage->getHeight(); }
 
-std::string DicomDataReader::getString(const DcmTagKey &dcmTagKey) {
+std::string DicomFileWrapper::getString(const DcmTagKey &dcmTagKey) {
     OFString value;
     dcmFileFormat->getDataset()->findAndGetOFString(dcmTagKey, value);
     return std::string(value.c_str());
 }
 
-double DicomDataReader::getDouble(const DcmTagKey &dcmTagKey) {
+double DicomFileWrapper::getDouble(const DcmTagKey &dcmTagKey) {
     Float64 value = 0;
     dcmFileFormat->getDataset()->findAndGetFloat64(dcmTagKey, value);
     return value;
 }
 
-const void *DicomDataReader::getImageOutputData(const int bits) {
+const void *DicomFileWrapper::getImageOutputData(const int bits) {
     return dicomImage->getOutputData(bits);
 }
 
-std::pair<double, double> DicomDataReader::findMinMaxPixel() {
+std::pair<double, double> DicomFileWrapper::findMinMaxPixel() {
     int width = getImageWidth();
     int height = getImageHeight();
     auto pixelData = (unsigned char *) getImageOutputData(8);
@@ -49,4 +49,12 @@ std::pair<double, double> DicomDataReader::findMinMaxPixel() {
     }
 
     return std::pair(min, max);
+}
+
+void DicomFileWrapper::saveTransformedImage() {
+
+    DcmFileFormat newImage(*dcmFileFormat);
+    newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0008, 0x0008)), "DERIVED");
+    newImage.saveFile("trans.dcm");
+
 }

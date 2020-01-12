@@ -4,13 +4,14 @@
 #include <iostream>
 #include "Image.h"
 #include "TextRenderer.h"
-#include "DicomDataReader.h"
+#include "DicomFileWrapper.h"
 
 int windowWidth = 520;
 int windowHeight = 400;
 
-Image *image;
+DicomFileWrapper* dicomFileWrapper;
 
+Image *image;
 std::vector<Renderable *> renderableObjects;
 
 const char *helpMessage = "Controls: A - apply transform; R - Restore original; S - save transformed image; ";
@@ -51,20 +52,20 @@ int main(int argc, char *argv[]) {
 
 void initDrawableObjects(const std::string &imagePath) {
 
-    DicomDataReader dicomDataReader(imagePath);
+    dicomFileWrapper = new DicomFileWrapper(imagePath);
 
-    auto imageTypeString = "Image Type: " + dicomDataReader.getString(DcmTagKey(0x0008, 0x0008));
+    auto imageTypeString = "Image Type: " + dicomFileWrapper->getString(DcmTagKey(0x0008, 0x0008));
     auto rescaleInterceptString =
-            "Rescale Intercept: " + std::to_string(dicomDataReader.getDouble(DcmTagKey(0x0028, 0x1052)));
-    auto rescaleSlopeString = "Rescale Slope: " + std::to_string(dicomDataReader.getDouble(DcmTagKey(0x0028, 0x1053)));
+            "Rescale Intercept: " + std::to_string(dicomFileWrapper->getDouble(DcmTagKey(0x0028, 0x1052)));
+    auto rescaleSlopeString = "Rescale Slope: " + std::to_string(dicomFileWrapper->getDouble(DcmTagKey(0x0028, 0x1053)));
 
-    auto minMaxPixels = dicomDataReader.findMinMaxPixel();
+    auto minMaxPixels = dicomFileWrapper->findMinMaxPixel();
     auto minPixelString = "Min Pixel: " + std::to_string(minMaxPixels.first);
     auto maxPixelString = "Max Pixel: " + std::to_string(minMaxPixels.second);
 
-    auto *pixelData = (unsigned char *) dicomDataReader.getImageOutputData(8);
+    auto *pixelData = (unsigned char *) dicomFileWrapper->getImageOutputData(8);
 
-    image = new Image(windowWidth, windowHeight, dicomDataReader.getImageWidth(), dicomDataReader.getImageHeight(), pixelData);
+    image = new Image(windowWidth, windowHeight, dicomFileWrapper->getImageWidth(), dicomFileWrapper->getImageHeight(), pixelData);
     image->setRescaleParameters(rescaleSlope, rescaleIntercept, lowerPixelBound, upperPixelBound);
 
     // Init text renderer
@@ -111,7 +112,7 @@ void keyboardInput(unsigned char key, int x, int y) {
             image->applyScaleType(ScaleType::DEFAULT);
             break;
         case 's':
-
+            dicomFileWrapper->saveTransformedImage();
             std::cout << "Transformed image was saved to file: transformed.dcm" << std::endl;
             break;
         default:
