@@ -1,0 +1,78 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Circle.cpp
+cmath
+-
+vector
+-
+Circle.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Circle.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Circle.h
+GL/glew.h
+-
+vector
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+Shader.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Shader.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/CoordinateSystem.cpp
+CoordinateSystem.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/CoordinateSystem.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/CoordinateSystem.h
+GL/glew.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+Circle.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Circle.h
+Shader.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Shader.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Shader.h
+GL/glew.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/GL/glew.h
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+string
+-
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/main.cpp
+GL/glew.h
+-
+GL/freeglut.h
+-
+iostream
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+Shader.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Shader.h
+CoordinateSystem.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/CoordinateSystem.h
+Circle.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_2/16_Pract_2_Code/Circle.h
+

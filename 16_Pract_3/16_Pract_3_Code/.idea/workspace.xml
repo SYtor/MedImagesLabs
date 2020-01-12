@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Lab3" targetName="Lab3" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="56ea3a46-8e36-4476-857e-eb9dcb7991d2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/.idea/Lab1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/77654033/20010101/CR1/6154" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/77654033/20010101/CR2/6247" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/77654033/20010101/CR3/6278" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/77654033/20010101/CR4/6216" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/77654033/20010101/CR5/6185" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/DICOMDIR" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/Sprite.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/Sprite.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Lab1.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Progress/1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Progress/2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/Progress/count.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/Lab1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/Lab1.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code/main2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Report.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Report.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/.idea/Lab2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/.idea/dictionaries/syt0r.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/Circle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/Circle.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/CoordinateSystem.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/CoordinateSystem.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/Shader.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/Shader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/Circle.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/CoordinateSystem.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/Shader.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Lab2.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/Lab2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/Lab2.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Code/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Report.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_2/16_Pract_2_Report.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/syt0r.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DICOM_Image_for_Lab_2.dcm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Image.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shader.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Shader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TextRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/Image.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/Shader.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/TextRenderer.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Lab3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Lab3.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../16_Pract_3_Report.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../16_Pract_3_Report.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/Lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/dictionaries/syt0r.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/DICOM_Image.dcm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/Image.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/Image.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/Shader.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/Shader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/TextRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/TextRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab3.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/Image.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/Shader.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/TextRenderer.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/Lab3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/Lab3.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/Lab4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/Lab4.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Code/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_4/16_Pract_4_Report.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/.idea/Lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/.idea/dictionaries/syt0r.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/DICOM_Image.dcm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/Image.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/Image.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/Shader.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/Shader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/TextRenderer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/TextRenderer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/arial.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab3.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/Image.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/Shader.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/TextRenderer.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Lab4.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/Lab3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/Lab3.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/Lab4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/Lab4.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Code/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_Pract_5/16_Pract_5_Report.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/16_RGR_Report.odt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/.idea/RGR.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Coordinate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Drawable.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Drawable.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Line.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Line.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Point.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Point.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Shader.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Shader.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Slice.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/Slice.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdC/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/3.14.5/CompilerIdCXX/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/Drawable.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/Line.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/Point.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/Shader.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/Slice.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/main.cpp.o" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/RGR.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/RGR" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/RGR.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16_RGR/RGR/main.cpp" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1SCIR0wyakVOg8WkC8nKgV1ohkn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../16_Pract_1/16_Pract_1_Code" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Lab3" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Lab3" TARGET_NAME="Lab3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab3" RUN_TARGET_NAME="Lab3">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="56ea3a46-8e36-4476-857e-eb9dcb7991d2" name="Default Changelist" comment="" />
+      <created>1571061140445</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571061140445</updated>
+      <workItem from="1571061148367" duration="240000" />
+      <workItem from="1571062588037" duration="5098000" />
+      <workItem from="1571068499950" duration="10957000" />
+      <workItem from="1571244672071" duration="4805000" />
+      <workItem from="1571339393337" duration="2369000" />
+      <workItem from="1571341974839" duration="1592000" />
+      <workItem from="1571969983851" duration="3210000" />
+      <workItem from="1578746856283" duration="679000" />
+      <workItem from="1578747639644" duration="148000" />
+      <workItem from="1578748009440" duration="295000" />
+      <workItem from="1578748931096" duration="357000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

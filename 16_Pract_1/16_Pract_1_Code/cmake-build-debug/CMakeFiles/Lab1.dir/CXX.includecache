@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_1/16_Pract_1_Code/Sprite.cpp
+Sprite.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_1/16_Pract_1_Code/Sprite.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_1/16_Pract_1_Code/Sprite.h
+GL/glew.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_1/16_Pract_1_Code/main.cpp
+iostream
+-
+dcmtk/dcmdata/dctk.h
+-
+dcmtk/dcmimgle/dcmimage.h
+-
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_1/16_Pract_1_Code/main2.cpp
+GL/glew.h
+-
+GL/freeglut.h
+-
+iostream
+-
+Sprite.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_1/16_Pract_1_Code/Sprite.h
+

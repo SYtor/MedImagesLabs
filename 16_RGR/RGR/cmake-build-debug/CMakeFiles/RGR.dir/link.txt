@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/RGR.dir/main.cpp.o CMakeFiles/RGR.dir/Line.cpp.o CMakeFiles/RGR.dir/Point.cpp.o CMakeFiles/RGR.dir/Slice.cpp.o CMakeFiles/RGR.dir/Shader.cpp.o CMakeFiles/RGR.dir/Drawable.cpp.o  -o RGR /usr/lib/libOpenGL.so /usr/lib/libGLX.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so /usr/lib/libGLEW.so /usr/lib/libfreetype.so 

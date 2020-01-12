@@ -1,0 +1,3 @@
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/Lab4.dir
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_4/16_Pract_4_Code/cmake-build-debug/CMakeFiles/edit_cache.dir

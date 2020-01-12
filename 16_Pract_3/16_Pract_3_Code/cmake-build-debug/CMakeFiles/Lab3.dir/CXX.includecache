@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_3/16_Pract_3_Code/Image.cpp
+Image.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_3/16_Pract_3_Code/Image.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_3/16_Pract_3_Code/Image.h
+GL/glew.h
+-
+string
+-
+vector
+-
+Shader.h
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_3/16_Pract_3_Code/Shader.h
+
+/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_3/16_Pract_3_Code/Shader.h
+GL/glew.h
+-
+string
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+
