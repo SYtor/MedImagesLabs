@@ -1,17 +1,25 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
-#include <dcmtk/dcmdata/dctk.h>
 #include <dcmtk/dcmimgle/dcmimage.h>
-#include <iostream>
 #include <string>
 #include <vector>
 #include "Image.h"
 #include "TextRenderer.h"
 #include "Renderable.h"
+#include "DicomFileWrapper.h"
+
+int windowWidth;
+int windowHeight;
+
+int imageWidth;
+int imageHeight;
 
 std::vector<Renderable*> renderableObjects;
 TextRenderer* cursorPositionText;
 TextRenderer* scanPositionText;
+
+OFVector<Float64> imagePosition;
+OFVector<Float64> imageOrientation;
 
 void render();
 void cursorInput(int x, int y);
@@ -22,15 +30,17 @@ int main(int argc, char* argv[]) {
 
     // Read image
 
-    auto *dicomImage = new DicomImage("DICOM_Image.dcm");
-    int imageWidth = (int) dicomImage->getWidth();
-    int imageHeight = (int) dicomImage->getHeight();
-    if(!dicomImage->isMonochrome() || dicomImage->getOutputDataSize() / imageHeight / imageWidth != 1)
-        throw std::runtime_error("Image not supported");
-    auto* pixelData = (unsigned char*) dicomImage->getOutputData(8);
+    DicomFileWrapper dicomFileWrapper("DICOM_Image.dcm");
 
-    int windowWidth = imageWidth * 2;
-    int windowHeight = imageHeight * 2;
+    imageWidth = dicomFileWrapper.getImageWidth();
+    imageHeight = dicomFileWrapper.getImageHeight();
+    auto* pixelData = (unsigned char*) dicomFileWrapper.getImageOutputData(8);
+
+    windowWidth = imageWidth * 2;
+    windowHeight = imageHeight * 2;
+
+    imagePosition = dicomFileWrapper.getDoubleArray(DcmTagKey(0x0020, 0x0032), 3);
+    imageOrientation = dicomFileWrapper.getDoubleArray(DcmTagKey(0x0020, 0x0037), 6);
 
     // Create window
 
@@ -47,27 +57,27 @@ int main(int argc, char* argv[]) {
     image->setPosition((float) imageWidth + 1, 0);
     renderableObjects.push_back(image);
 
-    delete dicomImage;
-
     cursorPositionText = new TextRenderer("arial.ttf", 14, windowWidth, windowHeight);
     cursorPositionText->setTextPosition(0, windowHeight - 16);
+    cursorPositionText->setTextColor(0,0,0);
     renderableObjects.push_back(cursorPositionText);
 
     scanPositionText = new TextRenderer("arial.ttf", 14, windowWidth, windowHeight);
     scanPositionText->setTextPosition(0, windowHeight - 30);
+    cursorPositionText->setTextColor(0,0,0);
     renderableObjects.push_back(scanPositionText);
 
-    auto l = new TextRenderer("arial.ttf", 40, windowWidth, windowHeight);
-    l->setTextPosition(windowWidth - 20, imageHeight / 2);
-    l->setText("L");
-    l->setTextColor(1,1,1);
-    renderableObjects.push_back(l);
+    auto lLabel = new TextRenderer("arial.ttf", 40, windowWidth, windowHeight);
+    lLabel->setTextPosition(windowWidth - 20, imageHeight / 2);
+    lLabel->setText("L");
+    lLabel->setTextColor(1, 1, 1);
+    renderableObjects.push_back(lLabel);
 
-    auto a = new TextRenderer("arial.ttf", 40, windowWidth, windowHeight);
-    a->setTextPosition(imageWidth * 3 / 2 - 10, 0);
-    a->setText("A");
-    a->setTextColor(1,1,1);
-    renderableObjects.push_back(a);
+    auto aLabel = new TextRenderer("arial.ttf", 40, windowWidth, windowHeight);
+    aLabel->setTextPosition(imageWidth * 3 / 2 - 10, 0);
+    aLabel->setText("A");
+    aLabel->setTextColor(1, 1, 1);
+    renderableObjects.push_back(aLabel);
 
     // Register callback functions and start rendering loop
 
@@ -98,19 +108,37 @@ void cursorInput(int x, int y) {
 }
 
 void displayCursorPosition(int x, int y) {
-    auto text = std::string("Cursor Position: ")
-            .append(std::to_string(x))
-            .append(" ")
-            .append(std::to_string(y));
+    auto text = std::string("Cursor Position: x= ")
+            .append(std::to_string(x - imageWidth))
+            .append(" y= ")
+            .append(std::to_string(imageHeight - y));
     cursorPositionText->setText(text);
 }
 
 void displayScanPosition(int x, int y) {
-    auto text = std::string("Scan Position: ")
-            .append(std::to_string(x))
-            .append(" ")
-            .append(std::to_string(y));
-    scanPositionText->setText(text);
+
+    x = x - imageWidth;
+    y = y - imageHeight;
+
+    printf("x= %i, y= %i\n", x, y);
+
+    if (x > 0 && y > 0) {
+
+        auto resultX = imagePosition.at(0) + y * imageOrientation.at(0) + x * imageOrientation.at(3);
+        auto resultY = imagePosition.at(1) + y * imageOrientation.at(1) + x * imageOrientation.at(4);
+        auto resultZ = imagePosition.at(2) + y * imageOrientation.at(2) + x * imageOrientation.at(5);
+
+        auto text = std::string("Scan Position: x= ")
+                .append(std::to_string(resultX))
+                .append(" y= ")
+                .append(std::to_string(resultY))
+                .append(" z= ")
+                .append(std::to_string(resultZ));
+        scanPositionText->setText(text);
+
+    } else {
+        scanPositionText->setText(std::string("Scan Position: Out of bounds"));
+    }
 }
 
 

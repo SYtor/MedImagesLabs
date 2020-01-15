@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Lab5.dir/Image.cpp.o"
   "CMakeFiles/Lab5.dir/Shader.cpp.o"
   "CMakeFiles/Lab5.dir/TextRenderer.cpp.o"
+  "CMakeFiles/Lab5.dir/DicomFileWrapper.cpp.o"
   "Lab5.pdb"
   "Lab5"
 )

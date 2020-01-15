@@ -13,7 +13,7 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
             float color = (float) pixel / 255.0f;
 
             renderingData.push_back(x);
-            renderingData.push_back(y);
+            renderingData.push_back(imageHeight - y);
             renderingData.push_back(color); //Red
             renderingData.push_back(color); //Green
             renderingData.push_back(color); //Blue

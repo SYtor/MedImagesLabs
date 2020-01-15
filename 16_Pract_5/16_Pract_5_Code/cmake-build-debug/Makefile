@@ -123,6 +123,33 @@ Lab5/fast:
 	$(MAKE) -f CMakeFiles/Lab5.dir/build.make CMakeFiles/Lab5.dir/build
 .PHONY : Lab5/fast
 
+DicomFileWrapper.o: DicomFileWrapper.cpp.o
+
+.PHONY : DicomFileWrapper.o
+
+# target to build an object file
+DicomFileWrapper.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab5.dir/build.make CMakeFiles/Lab5.dir/DicomFileWrapper.cpp.o
+.PHONY : DicomFileWrapper.cpp.o
+
+DicomFileWrapper.i: DicomFileWrapper.cpp.i
+
+.PHONY : DicomFileWrapper.i
+
+# target to preprocess a source file
+DicomFileWrapper.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab5.dir/build.make CMakeFiles/Lab5.dir/DicomFileWrapper.cpp.i
+.PHONY : DicomFileWrapper.cpp.i
+
+DicomFileWrapper.s: DicomFileWrapper.cpp.s
+
+.PHONY : DicomFileWrapper.s
+
+# target to generate assembly for a file
+DicomFileWrapper.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab5.dir/build.make CMakeFiles/Lab5.dir/DicomFileWrapper.cpp.s
+.PHONY : DicomFileWrapper.cpp.s
+
 Image.o: Image.cpp.o
 
 .PHONY : Image.o
@@ -240,6 +267,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Lab5"
 	@echo "... edit_cache"
+	@echo "... DicomFileWrapper.o"
+	@echo "... DicomFileWrapper.i"
+	@echo "... DicomFileWrapper.s"
 	@echo "... Image.o"
 	@echo "... Image.i"
 	@echo "... Image.s"

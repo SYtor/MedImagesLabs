@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_5/16_Pract_5_Code/DicomFileWrapper.cpp">
+			<Option target="Lab5"/>
+		</Unit>
+		<Unit filename="/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_5/16_Pract_5_Code/DicomFileWrapper.h">
+			<Option target="Lab5"/>
+		</Unit>
 		<Unit filename="/home/syt0r/CLionProjects/16 - Shuliak/16_Pract_5/16_Pract_5_Code/Image.cpp">
 			<Option target="Lab5"/>
 		</Unit>
