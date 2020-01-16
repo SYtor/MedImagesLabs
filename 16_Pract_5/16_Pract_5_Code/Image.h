@@ -13,8 +13,8 @@ private:
     Shader *shader;
     GLuint vao;
     GLuint vbo;
-    int numOfPixels;
-    std::vector<float> renderingData;
+    GLuint ebo;
+    GLuint texture;
 
 public:
     Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData);

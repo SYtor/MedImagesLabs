@@ -54,7 +54,10 @@ void initDrawableObjects(const std::string &imagePath) {
 
     dicomFileWrapper = new DicomFileWrapper(imagePath);
 
-    auto imageTypeString = "Image Type: " + dicomFileWrapper->getString(DcmTagKey(0x0008, 0x0008));
+    DcmCodeString imageTypeCodeString = dicomFileWrapper->getCodeString(DcmTagKey(0x0008, 0x0008));
+    OFString pixelDataCharacteristic;
+    imageTypeCodeString.getOFString(pixelDataCharacteristic, 0);
+    auto imageTypeString = "Image Type: " + std::string(pixelDataCharacteristic.c_str());
     auto rescaleInterceptString =
             "Rescale Intercept: " + std::to_string(dicomFileWrapper->getDouble(DcmTagKey(0x0028, 0x1052)));
     auto rescaleSlopeString = "Rescale Slope: " + std::to_string(dicomFileWrapper->getDouble(DcmTagKey(0x0028, 0x1053)));

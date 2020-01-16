@@ -16,10 +16,12 @@ DicomFileWrapper::DicomFileWrapper(const std::string &imagePath) {
 int DicomFileWrapper::getImageWidth() { return (int) dicomImage->getWidth(); }
 int DicomFileWrapper::getImageHeight() { return (int) dicomImage->getHeight(); }
 
-std::string DicomFileWrapper::getString(const DcmTagKey &dcmTagKey) {
+DcmCodeString DicomFileWrapper::getCodeString(const DcmTagKey &dcmTagKey) {
     OFString value;
-    dcmFileFormat->getDataset()->findAndGetOFString(dcmTagKey, value);
-    return std::string(value.c_str());
+    dcmFileFormat->getDataset()->findAndGetOFStringArray(dcmTagKey, value);
+    DcmCodeString dcmCodeString(DcmTag(dcmTagKey), value.size());
+    dcmCodeString.putString(value.c_str());
+    return dcmCodeString;
 }
 
 double DicomFileWrapper::getDouble(const DcmTagKey &dcmTagKey) {

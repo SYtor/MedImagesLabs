@@ -1,4 +1,5 @@
 #include "Image.h"
+#include <algorithm>
 
 Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData) {
 
@@ -13,7 +14,7 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
             float color = (float) pixel / 255.0f;
 
             defaultData.push_back(x);
-            defaultData.push_back(y);
+            defaultData.push_back(imageHeight - y);
             defaultData.push_back(color); //Red
             defaultData.push_back(color); //Green
             defaultData.push_back(color); //Blue
@@ -76,6 +77,9 @@ void Image::setRescaleParameters(float rescaleSlope, float rescaleIntercept, int
     float lowerBoundScaled = (float) lowerBound / 255.0f;
     float upperBoundScaled = (float) upperBound / 255.0f;
 
+    float min = 255;
+    float max = 0;
+
     for (int i = 0; i < numOfPixels; i++) {
 
         float x = defaultData[i * 5 + 0];
@@ -85,10 +89,13 @@ void Image::setRescaleParameters(float rescaleSlope, float rescaleIntercept, int
         float modifiedColor = color;
         if (modifiedColor > upperBoundScaled)
             modifiedColor = upperBoundScaled;
-        else if(modifiedColor < (float) lowerBound / 255.0f)
+        else if (modifiedColor < lowerBoundScaled)
             modifiedColor = lowerBoundScaled;
         else
-            modifiedColor = (rescaleSlope * color * 255 + rescaleIntercept) / 255;
+            modifiedColor = (rescaleSlope * color * 255 + rescaleIntercept);
+
+        if (modifiedColor < min) min = modifiedColor;
+        if (modifiedColor > max) max = modifiedColor;
 
         transformedData.push_back(x);
         transformedData.push_back(y);
@@ -96,6 +103,14 @@ void Image::setRescaleParameters(float rescaleSlope, float rescaleIntercept, int
         transformedData.push_back(modifiedColor); // Green
         transformedData.push_back(modifiedColor); // Blue
 
+    }
+
+    for (int i = 0; i < numOfPixels; i++) {
+        float color = transformedData[i * 5 + 2];
+        float normalizedColor = (color - min) / (max - min);
+        transformedData.at(i * 5 + 2) = normalizedColor;
+        transformedData.at(i * 5 + 3) = normalizedColor;
+        transformedData.at(i * 5 + 4) = normalizedColor;
     }
 
 }
