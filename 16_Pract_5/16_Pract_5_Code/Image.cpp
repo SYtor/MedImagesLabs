@@ -2,6 +2,8 @@
 
 Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData) {
 
+
+
     float vertexes[] = {
             //Vertices      //Texture Coords
             -0.5, -0.5,     0,0,
@@ -66,7 +68,14 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_S,GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_WRAP_T,GL_CLAMP_TO_EDGE);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, imageWidth, imageHeight, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, pixelData);
+    auto data = new unsigned char[imageWidth * imageHeight];
+    for (int i = 0; i < imageWidth; ++i) {
+        for (int j = 0; j < imageHeight; ++j) {
+            data[imageWidth * i + imageHeight] = *(pixelData + imageWidth * i + imageHeight);
+        }
+    }
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_LUMINANCE, imageWidth, imageHeight, 0, GL_LUMINANCE, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
 
     GLenum res = glGetError();
