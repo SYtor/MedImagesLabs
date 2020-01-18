@@ -1,10 +1,9 @@
 #include <GL/glew.h>
 #include <GL/freeglut.h>
-#include <dcmtk/dcmdata/dctk.h>
-#include <dcmtk/dcmimgle/dcmimage.h>
 #include <iostream>
 #include "Image.h"
 #include "TextRenderer.h"
+#include "DicomFileWrapper.h"
 
 int windowWidth = 300;
 int windowHeight = 300;
@@ -12,7 +11,6 @@ int windowHeight = 300;
 Image* image;
 TextRenderer* textRenderer;
 
-void initDrawableObjects();
 void render();
 void keyboardInput(unsigned char key, int x, int y);
 
@@ -25,7 +23,17 @@ int main(int argc, char* argv[]) {
     glutCreateWindow("Lab3");
     glewInit();
 
-    initDrawableObjects();
+    DicomFileWrapper dicomFileWrapper("DICOM_Image_for_Lab_2.dcm");
+
+    int imageWidth = dicomFileWrapper.getUShort(DcmTagKey(0x0028, 0x0011));
+    int imageHeight = dicomFileWrapper.getUShort(DcmTagKey(0x0028, 0x0010));
+    auto pixelData = dicomFileWrapper.getUCharArray(DcmTagKey(0x7FE0, 0x0010));
+    image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, pixelData);
+
+    auto patientWeight = dicomFileWrapper.getString(DcmTagKey(0x0010, 0x1030));
+    textRenderer = new TextRenderer("arial.ttf", 14, windowWidth, windowHeight);
+    textRenderer->setTextPosition(0, windowHeight - 16);
+    textRenderer->setText(std::string("Patient's Weight: ").append(patientWeight));
 
     glutDisplayFunc(render);
     glutKeyboardFunc(keyboardInput);
@@ -38,37 +46,7 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 
-void initDrawableObjects() {
-
-    // Load pixel data and init image
-
-    auto *dicomImage = new DicomImage("DICOM_Image_for_Lab_2.dcm");
-    int imageWidth = (int) dicomImage->getWidth();
-    int imageHeight = (int) dicomImage->getHeight();
-    if(!dicomImage->isMonochrome() || dicomImage->getOutputDataSize() / imageHeight / imageWidth != 1)
-        throw std::runtime_error("Image not supported");
-    auto* pixelData = (unsigned char*) dicomImage->getOutputData(8);
-
-    image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, pixelData);
-
-    delete dicomImage;
-
-    // Load patient weight and init text renderer
-
-    DcmFileFormat dcmFileFormat;
-    dcmFileFormat.loadFile("DICOM_Image_for_Lab_2.dcm");
-    OFString patientWeight;
-    DcmTagKey weightTagKey = DcmTagKey(0x0010, 0x1030);
-    dcmFileFormat.getDataset()->findAndGetOFString(weightTagKey, patientWeight);
-
-    textRenderer = new TextRenderer("arial.ttf", 14, windowWidth, windowHeight);
-    textRenderer->setTextPosition(0, windowHeight - 16);
-    textRenderer->setText(std::string("Patient's Weight: ").append(patientWeight.c_str()));
-
-}
-
 void render() {
-
     glClearColor(1,1,1,1);
     glClear(GL_COLOR_BUFFER_BIT);
 
@@ -76,7 +54,6 @@ void render() {
     textRenderer->render();
 
     glutSwapBuffers();
-
 }
 
 void keyboardInput(unsigned char key, int x, int y) {

@@ -7,6 +7,7 @@
 #include "TextRenderer.h"
 #include "Renderable.h"
 #include "DicomFileWrapper.h"
+#include <math.h>
 
 int windowWidth;
 int windowHeight;
@@ -18,10 +19,11 @@ std::vector<Renderable*> renderableObjects;
 TextRenderer* cursorPositionText;
 TextRenderer* scanPositionText;
 
-OFVector<Float64> imagePosition;
-OFVector<Float64> imageOrientation;
+OFVector<double> imagePosition;
+OFVector<double> imageOrientation;
 
 void render();
+double getAngleDegree(double cosValue);
 void cursorInput(int x, int y);
 void displayCursorPosition(int x, int y);
 void displayScanPosition(int x, int y);
@@ -32,9 +34,9 @@ int main(int argc, char* argv[]) {
 
     DicomFileWrapper dicomFileWrapper("DICOM_Image.dcm");
 
-    imageWidth = dicomFileWrapper.getImageWidth();
-    imageHeight = dicomFileWrapper.getImageHeight();
-    auto* pixelData = (unsigned char*) dicomFileWrapper.getImageOutputData(8);
+    imageWidth = dicomFileWrapper.getUShort(DcmTagKey(0x0028, 0x0011));
+    imageHeight = dicomFileWrapper.getUShort(DcmTagKey(0x0028, 0x0010));
+    auto pixelData = dicomFileWrapper.getUCharArray(DcmTagKey(0x7FE0, 0x0010));
 
     windowWidth = imageWidth * 2;
     windowHeight = imageHeight * 2;
@@ -54,7 +56,12 @@ int main(int argc, char* argv[]) {
     // Init rendering data
 
     auto image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, pixelData);
-    image->setPosition(windowWidth / 2, 0);
+    image->setPosition(3.0f * imageWidth / 4.0f, imageHeight / 4.0f);
+    image->setRotation(180); //According to 16 variant
+
+    if (getAngleDegree(imageOrientation.at(0)) > 45 && getAngleDegree(imageOrientation.at(imageOrientation.at(4))) > 45)
+        image->setRotation(0);
+
     renderableObjects.push_back(image);
 
     cursorPositionText = new TextRenderer("arial.ttf", 14, windowWidth, windowHeight);
@@ -101,6 +108,10 @@ void render() {
 
 }
 
+double getAngleDegree(double cosValue) {
+    return (int) acos(cosValue) % 360;
+}
+
 void cursorInput(int x, int y) {
     displayCursorPosition(x, y);
     displayScanPosition(x, y);
@@ -116,16 +127,12 @@ void displayCursorPosition(int x, int y) {
 }
 
 void displayScanPosition(int x, int y) {
-
     x = x - imageWidth;
     y = y - imageHeight;
-
     if (x > 0 && y > 0) {
-
         auto resultX = imagePosition.at(0) + y * imageOrientation.at(0) + x * imageOrientation.at(3);
         auto resultY = imagePosition.at(1) + y * imageOrientation.at(1) + x * imageOrientation.at(4);
         auto resultZ = imagePosition.at(2) + y * imageOrientation.at(2) + x * imageOrientation.at(5);
-
         auto text = std::string("Scan Position: x= ")
                 .append(std::to_string(resultX))
                 .append(" y= ")
@@ -133,11 +140,9 @@ void displayScanPosition(int x, int y) {
                 .append(" z= ")
                 .append(std::to_string(resultZ));
         scanPositionText->setText(text);
-
     } else {
         scanPositionText->setText(std::string("Scan Position: Out of bounds"));
     }
-
 }
 
 

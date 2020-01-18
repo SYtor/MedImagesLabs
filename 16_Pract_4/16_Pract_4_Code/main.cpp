@@ -54,6 +54,10 @@ void initDrawableObjects(const std::string &imagePath) {
 
     dicomFileWrapper = new DicomFileWrapper(imagePath);
 
+    int imageWidth = dicomFileWrapper->getUShort(DcmTagKey(0x0028, 0x0011));
+    int imageHeight = dicomFileWrapper->getUShort(DcmTagKey(0x0028, 0x0010));
+    auto pixelData = dicomFileWrapper->getUCharArray(DcmTagKey(0x7FE0, 0x0010));
+
     DcmCodeString imageTypeCodeString = dicomFileWrapper->getCodeString(DcmTagKey(0x0008, 0x0008));
     OFString pixelDataCharacteristic;
     imageTypeCodeString.getOFString(pixelDataCharacteristic, 0);
@@ -62,13 +66,11 @@ void initDrawableObjects(const std::string &imagePath) {
             "Rescale Intercept: " + std::to_string(dicomFileWrapper->getDouble(DcmTagKey(0x0028, 0x1052)));
     auto rescaleSlopeString = "Rescale Slope: " + std::to_string(dicomFileWrapper->getDouble(DcmTagKey(0x0028, 0x1053)));
 
-    auto minMaxPixels = dicomFileWrapper->findMinMaxPixel();
+    auto minMaxPixels = DicomFileWrapper::findMinMaxPixel(imageWidth, imageHeight, pixelData);
     auto minPixelString = "Min Pixel: " + std::to_string(minMaxPixels.first);
     auto maxPixelString = "Max Pixel: " + std::to_string(minMaxPixels.second);
 
-    auto *pixelData = (unsigned char *) dicomFileWrapper->getImageOutputData(8);
-
-    image = new Image(windowWidth, windowHeight, dicomFileWrapper->getImageWidth(), dicomFileWrapper->getImageHeight(), pixelData);
+    image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, pixelData);
     image->setRescaleParameters(rescaleSlope, rescaleIntercept, lowerPixelBound, upperPixelBound);
 
     // Init text renderer
@@ -107,20 +109,20 @@ void render() {
 }
 
 void keyboardInput(unsigned char key, int x, int y) {
-    switch (key) {
-        case 'a':
-            image->applyScaleType(ScaleType::SCALED);
-            break;
-        case 'r':
-            image->applyScaleType(ScaleType::DEFAULT);
-            break;
-        case 's':
-            dicomFileWrapper->saveTransformedImage();
-            std::cout << "Transformed image was saved to file: transformed.dcm" << std::endl;
-            break;
-        default:
-            break;
-    }
+//    switch (key) {
+//        case 'a':
+//            image->applyScaleType(ScaleType::SCALED);
+//            break;
+//        case 'r':
+//            image->applyScaleType(ScaleType::DEFAULT);
+//            break;
+//        case 's':
+//            dicomFileWrapper->saveTransformedImage();
+//            std::cout << "Transformed image was saved to file: transformed.dcm" << std::endl;
+//            break;
+//        default:
+//            break;
+//    }
     glutPostRedisplay();
 }
 

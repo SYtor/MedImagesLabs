@@ -8,17 +8,11 @@
 class DicomFileWrapper {
 private:
     DcmFileFormat *dcmFileFormat;
-    DicomImage *dicomImage;
-
 public:
     DicomFileWrapper(const std::string &imagePath);
-
-    int getImageWidth();
-    int getImageHeight();
-
-    Float64 getDouble(const DcmTagKey &dcmTagKey);
-    OFVector<Float64> getDoubleArray(const DcmTagKey &dcmTagKey, unsigned long size);
-    const void *getImageOutputData(int bits = 0);
+    unsigned short getUShort(const DcmTagKey &dcmTagKey);
+    OFVector<double> getDoubleArray(const DcmTagKey &dcmTagKey, unsigned long size);
+    const unsigned char* getUCharArray(const DcmTagKey &dcmTagKey);
 
 };
 

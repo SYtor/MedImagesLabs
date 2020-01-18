@@ -10,21 +10,20 @@ DicomFileWrapper::DicomFileWrapper(const std::string &imagePath) {
         throw std::runtime_error("Image not supported");
 }
 
+DicomFileWrapper::~DicomFileWrapper() {
+    delete dcmFileFormat;
+}
+
 unsigned short DicomFileWrapper::getUShort(const DcmTagKey &dcmTagKey) {
     unsigned short value = 0;
     dcmFileFormat->getDataset()->findAndGetUint16(dcmTagKey, value);
     return value;
 }
 
-OFVector<double> DicomFileWrapper::getDoubleArray(const DcmTagKey& dcmTagKey, unsigned long size) {
-    const char * stringValue = nullptr;
-    auto condition = dcmFileFormat->getDataset()->findAndGetString(dcmTagKey, stringValue);
-    OFVector<Float64> arrayValue;
-    OFString ofstr(stringValue);
-    DcmDecimalString str(DcmTag(dcmTagKey), ofstr.size());
-    str.putString(stringValue);
-    auto condition2 = str.getFloat64Vector(arrayValue);
-    return arrayValue;
+std::string DicomFileWrapper::getString(const DcmTagKey &dcmTagKey) {
+    OFString value;
+    dcmFileFormat->getDataset()->findAndGetOFString(dcmTagKey, value);
+    return std::string(value.c_str());
 }
 
 const unsigned char* DicomFileWrapper::getUCharArray(const DcmTagKey &dcmTagKey) {

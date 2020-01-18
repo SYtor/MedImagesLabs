@@ -12,13 +12,11 @@ private:
     Shader *shader;
     GLuint vao;
     GLuint vbo;
-
-    std::vector<float> data;
-
+    GLuint ebo;
+    GLuint texture;
 public:
     Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData);
     ~Image();
-
     void render();
 
 };

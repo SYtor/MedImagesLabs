@@ -1,14 +1,13 @@
 #include "Image.h"
 
-Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData)
-        : imageWidth(imageWidth), imageHeight(imageHeight) {
+Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData) {
 
     float vertexes[] = {
             //Vertices      //Texture Coords
-            0, 0, 0, 1,
-            1, 0, 1, 1,
-            1, 1, 1, 0,
-            0, 1, 0, 0
+            -0.5, -0.5,     0, 1,
+            0.5, -0.5,      1, 1,
+            0.5, 0.5,       1, 0,
+            -0.5, 0.5,      0, 0
     };
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
@@ -60,6 +59,10 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *) (2 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
+    scale = glm::vec3(imageWidth, imageHeight, 1);
+    translation = glm::vec3(0);
+    updateModelMatrix();
+
     glm::mat4 projection = glm::ortho<float>(0, windowWidth, 0, windowHeight, -1, 1);
     glm::mat4 view = glm::lookAt(
             glm::vec3(0, 0, 1.0f),
@@ -70,7 +73,6 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
 
     shader->setMatrix4("projection", projection);
     shader->setMatrix4("view", view);
-    shader->setMatrix4("model", model);
 
     glActiveTexture(GL_TEXTURE0);
     glGenTextures(1, &texture);
@@ -90,10 +92,20 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
 }
 
 void Image::setPosition(float x, float y) {
+    translation = glm::vec3(x, y, 0);
+    updateModelMatrix();
+}
+
+void Image::setRotation(float degrees) {
+    rotation = glm::radians(degrees);
+    updateModelMatrix();
+}
+
+void Image::updateModelMatrix() {
     glm::mat4 model = glm::mat4(1.0f);
-    glm::vec3 scale = glm::vec3(imageWidth, imageHeight, 1);
+    model = model * glm::translate(model, translation);
+    model = model * glm::rotate(model, rotation, glm::vec3(0,0,1));
     model = glm::scale(model, scale);
-    model = glm::translate(model, glm::vec3(x, y, 0) / scale);
     shader->setMatrix4("model", model);
 }
 

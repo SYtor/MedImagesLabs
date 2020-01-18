@@ -11,7 +11,8 @@ class Image : public Renderable {
 
 private:
 
-    int imageWidth, imageHeight;
+    glm::vec3 scale, translation;
+    float rotation = 0;
 
     Shader *shader;
     GLuint vao;
@@ -19,11 +20,14 @@ private:
     GLuint ebo;
     GLuint texture;
 
+    void updateModelMatrix();
+
 public:
     Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData);
     ~Image();
 
     void setPosition(float x, float y);
+    void setRotation(float degrees);
     void render() override;
 
 };

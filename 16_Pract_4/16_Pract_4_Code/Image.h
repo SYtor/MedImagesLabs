@@ -7,24 +7,28 @@
 #include "Shader.h"
 #include "Renderable.h"
 
-enum ScaleType { DEFAULT, SCALED };
+struct DisplayMode {
+    std::string title;
+    std::string pixelRange;
+    GLint texture;
+};
 
 class Image : public Renderable {
 
 private:
+
     Shader *shader;
     GLuint vao;
     GLuint vbo;
-    int numOfPixels;
-    std::vector<float> defaultData;
-    std::vector<float> transformedData;
+    GLuint ebo;
+    GLuint texture;
+    std::vector<GLuint> textureArray;
 
 public:
-    Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData);
-    ~Image();
 
-    void setRescaleParameters(float rescaleSlope, float rescaleIntercept, int lowerBound, int upperBound);
-    void applyScaleType(ScaleType scaleType);
+    Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char* pixelData);
+    ~Image();
+    void setDisplayMode(DisplayMode displayMode);
     void render() override;
 
 };
