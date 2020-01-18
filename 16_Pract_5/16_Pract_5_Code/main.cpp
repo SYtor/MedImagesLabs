@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
     // Init rendering data
 
     auto image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, pixelData);
-    image->setPosition((float) imageWidth + 1, 0);
+    image->setPosition(windowWidth / 2, 0);
     renderableObjects.push_back(image);
 
     cursorPositionText = new TextRenderer("arial.ttf", 14, windowWidth, windowHeight);
@@ -120,8 +120,6 @@ void displayScanPosition(int x, int y) {
     x = x - imageWidth;
     y = y - imageHeight;
 
-    printf("x= %i, y= %i\n", x, y);
-
     if (x > 0 && y > 0) {
 
         auto resultX = imagePosition.at(0) + y * imageOrientation.at(0) + x * imageOrientation.at(3);
@@ -139,6 +137,7 @@ void displayScanPosition(int x, int y) {
     } else {
         scanPositionText->setText(std::string("Scan Position: Out of bounds"));
     }
+
 }
 
 

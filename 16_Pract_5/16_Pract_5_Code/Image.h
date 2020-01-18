@@ -10,6 +10,9 @@
 class Image : public Renderable {
 
 private:
+
+    int imageWidth, imageHeight;
+
     Shader *shader;
     GLuint vao;
     GLuint vbo;
