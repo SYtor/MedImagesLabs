@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Lab2.dir/main.cpp.o CMakeFiles/Lab2.dir/Circle.cpp.o CMakeFiles/Lab2.dir/CoordinateSystem.cpp.o CMakeFiles/Lab2.dir/Shader.cpp.o  -o Lab2 /usr/lib/libOpenGL.so /usr/lib/libGLX.so /usr/lib/libGLU.so /usr/lib/libglut.so /usr/lib/libXmu.so /usr/lib/libXi.so /usr/lib/libGLEW.so 

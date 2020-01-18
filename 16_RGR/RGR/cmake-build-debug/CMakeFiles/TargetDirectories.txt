@@ -1,3 +1,0 @@
-/home/syt0r/CLionProjects/RGR/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/syt0r/CLionProjects/RGR/cmake-build-debug/CMakeFiles/RGR.dir
-/home/syt0r/CLionProjects/RGR/cmake-build-debug/CMakeFiles/edit_cache.dir
