@@ -1,7 +1,3 @@
-//
-// Created by syt0r on 12/26/19.
-//
-
 #ifndef RGR_DRAWABLE_H
 #define RGR_DRAWABLE_H
 
@@ -17,7 +13,7 @@ private:
     int verticesToDraw;
 public:
     Drawable(Shader* shader, GLenum drawMode);
-    void setVerticesData(std::vector<float> verticesData);
+    void setVertices(std::vector<float> vertices);
     void draw();
 };
 

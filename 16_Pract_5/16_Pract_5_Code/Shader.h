@@ -1,5 +1,5 @@
-#ifndef LAB4_SHADER_H
-#define LAB4_SHADER_H
+#ifndef LAB5_SHADER_H
+#define LAB5_SHADER_H
 
 #include <GL/glew.h>
 #include <string>
@@ -8,7 +8,6 @@
 #include <glm/gtc/type_ptr.hpp>
 
 class Shader {
-
 
 private:
     GLuint shaderProgram;
@@ -23,4 +22,4 @@ public:
 };
 
 
-#endif //LAB4_SHADER_H
+#endif //LAB5_SHADER_H

@@ -8,6 +8,7 @@
 struct Coordinate {
     float x;
     float y;
+    float z;
 };
 
 #endif //RGR_COORDINATE_H

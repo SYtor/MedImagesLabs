@@ -17,8 +17,7 @@ public:
     double getDouble(const DcmTagKey& dcmTagKey);
     std::string getString(const DcmTagKey &dcmTagKey);
     const unsigned char* getUCharArray(const DcmTagKey &dcmTagKey);
-
-    void saveTransformedImage(int width, int height, unsigned char* pixels);
+    void saveTransformedImage(int width, int height, const unsigned char* pixels, double rescaleSlope, double rescaleIntercept);
 
     static std::pair<double, double> findMinMaxPixel(int width, int height, const unsigned char* pixels);
 

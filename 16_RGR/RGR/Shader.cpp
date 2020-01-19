@@ -3,37 +3,37 @@
 
 Shader::Shader() {
 
-    GLuint vertexShader = compileShader(
+    auto vertexShaderScript =
             "#version 400\n"
-            "layout(location = 0) in vec2 position; "
-            "layout(location = 1) in vec3 color; "
-            "out vec3 vertexColor; "
+            "uniform mat4 projection;"
             "uniform mat4 model;"
             "uniform mat4 view;"
-            "uniform mat4 projection;"
+            "layout (location = 0) in vec3 position;"
+            "layout (location = 1) in vec4 color_in;"
+            "out vec4 fragColor;"
             "void main()"
             "{"
-            "    gl_Position = projection * view * model * vec4(position, 0.0, 1.0);"
-            "    vertexColor = color;"
-            "}", GL_VERTEX_SHADER);
+            "    gl_Position = projection * view * model * vec4(position, 1.0);"
+            "    fragColor = color_in;"
+            "}";
 
-    GLuint fragmentShader = compileShader(
+    auto fragmentShaderScript =
             "#version 400\n"
-            "in vec3 vertexColor;"
+            "in vec4 fragColor;"
             "out vec4 FragColor;"
             "void main()"
             "{"
-            "    FragColor = vec4(1,1,1, 1.0);"
-            "}", GL_FRAGMENT_SHADER);
+            "    FragColor = vec4(fragColor);"
+            "}";
+
+    GLuint vertexShader = compileShader(vertexShaderScript, GL_VERTEX_SHADER);
+    GLuint fragmentShader = compileShader(fragmentShaderScript, GL_FRAGMENT_SHADER);
 
     shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
     glUseProgram(shaderProgram);
-
-    glEnable(GL_PROGRAM_POINT_SIZE);
-
 }
 
 GLuint Shader::compileShader(const char *shaderText, GLenum shaderType) {
@@ -59,4 +59,8 @@ GLuint Shader::compileShader(const char *shaderText, GLenum shaderType) {
 
 void Shader::setMatrix4(const std::string &name, glm::mat4 matrix) {
     glUniformMatrix4fv(glGetUniformLocation(shaderProgram, name.c_str()), 1, GL_FALSE, &matrix[0][0]);
+}
+
+void Shader::setVec3(const std::string &name, glm::vec3 vector) {
+    glUniform3fv(glGetUniformLocation(shaderProgram, name.c_str()), 1, &vector[0]);
 }

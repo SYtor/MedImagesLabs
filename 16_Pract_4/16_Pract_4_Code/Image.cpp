@@ -4,10 +4,10 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
 
     float vertexes[] = {
             //Vertices      //Texture Coords
-            0, 0, 0, 1,
-            1, 0, 1, 1,
-            1, 1, 1, 0,
-            0, 1, 0, 0
+            0, 0,           0, 1,
+            1, 0,           1, 1,
+            1, 1,           1, 0,
+            0, 1,           0, 0
     };
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
@@ -85,22 +85,6 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
 
     glUseProgram(shader->getReference());
     glUniform1i(glGetUniformLocation(shader->getReference(), "texture1"), 0);
-
-}
-
-void Image::setDisplayMode(DisplayMode displayMode) {
-
-    switch (displayMode) {
-        case ORIGINAL:
-            texture = textureArray.at(0);
-            break;
-        case PIXEL_RANGE:
-            texture = textureArray.at(1);
-            break;
-        case TRANSFORM_APPLIED:
-            texture = textureArray.at(2);
-            break;
-    }
 
 }
 

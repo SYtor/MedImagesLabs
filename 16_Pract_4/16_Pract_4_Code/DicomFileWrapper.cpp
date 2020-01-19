@@ -48,6 +48,17 @@ double DicomFileWrapper::getDouble(const DcmTagKey &dcmTagKey) {
     return value;
 }
 
+void DicomFileWrapper::saveTransformedImage(int width, int height, const unsigned char* pixels, double rescaleSlope, double rescaleIntercept) {
+    DcmFileFormat newImage(*dcmFileFormat);
+    newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0008, 0x0008)), "DERIVED\\SECONDARY\\MPR");
+    char uid[100];
+    dcmGenerateUniqueIdentifier(uid);
+    newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1052)), std::to_string(rescaleIntercept).c_str());
+    newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1053)), std::to_string(rescaleSlope).c_str());
+    newImage.getDataset()->putAndInsertUint8Array(DcmTagKey(0x7FE0, 0x0010), pixels, width * height);
+    newImage.saveFile("derived.dcm");
+}
+
 std::pair<double, double> DicomFileWrapper::findMinMaxPixel(int width, int height, const unsigned char* pixels) {
     double min = 255;
     double max = 0;
@@ -59,12 +70,4 @@ std::pair<double, double> DicomFileWrapper::findMinMaxPixel(int width, int heigh
         }
     }
     return std::pair(min, max);
-}
-
-void DicomFileWrapper::saveTransformedImage(int width, int height, unsigned char* pixels) {
-
-    DcmFileFormat newImage(*dcmFileFormat);
-    newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0008, 0x0008)), "DERIVED\\SECONDARY\\MPR");
-    newImage.saveFile("trans.dcm");
-
 }

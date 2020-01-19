@@ -1,26 +1,24 @@
-//
-// Created by syt0r on 12/27/19.
-//
-
 #include "Drawable.h"
 
 Drawable::Drawable(Shader *shader, GLenum drawMode) : shader(shader), drawMode(drawMode) {}
 
-void Drawable::setVerticesData(std::vector<float> verticesData) {
+void Drawable::setVertices(std::vector<float> vertices) {
 
-    verticesToDraw = verticesData.size() / 5;
+    verticesToDraw = (int) vertices.size() / 7;
 
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
 
     glGenBuffers(1, &vbo);
     glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, verticesToDraw * sizeof(float), &verticesData[0], GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), &vertices[0], GL_STATIC_DRAW);
 
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glUseProgram(shader->getReference());
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
 
 }

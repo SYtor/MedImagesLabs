@@ -1,10 +1,5 @@
-//
-// Created by syt0r on 12/26/19.
-//
-
 #ifndef RGR_POINT_H
 #define RGR_POINT_H
-
 
 #include "Drawable.h"
 #include "Coordinate.h"

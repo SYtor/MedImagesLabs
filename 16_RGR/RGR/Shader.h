@@ -1,5 +1,5 @@
-#ifndef LAB3_SHADER_H
-#define LAB3_SHADER_H
+#ifndef RGR_SHADER_H
+#define RGR_SHADER_H
 
 #include <GL/glew.h>
 #include <string>
@@ -9,7 +9,6 @@
 
 class Shader {
 
-
 private:
     GLuint shaderProgram;
     GLuint compileShader(const char *shaderText, GLenum shaderType);
@@ -17,9 +16,10 @@ private:
 public:
     Shader();
     void setMatrix4(const std::string &name, glm::mat4 matrix);
+    void setVec3(const std::string &name, glm::vec3 vector);
     GLuint getReference() { return shaderProgram; }
 
 };
 
 
-#endif //LAB3_SHADER_H
+#endif //RGR_SHADER_H

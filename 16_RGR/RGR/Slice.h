@@ -1,21 +1,14 @@
-//
-// Created by syt0r on 12/26/19.
-//
-
 #ifndef RGR_SLICE_H
 #define RGR_SLICE_H
 
-
-#include "Drawable.h"
+#include <GL/glew.h>
+#include "Shader.h"
 #include "Coordinate.h"
+#include "Drawable.h"
 
 class Slice : public Drawable {
-private:
-
 public:
-    Slice(Coordinate point1, Coordinate point2, Coordinate point3, Coordinate point4);
-    void draw();
+    Slice(Shader* shader, Coordinate a, Coordinate b, Coordinate c, Coordinate d);
 };
-
 
 #endif //RGR_SLICE_H

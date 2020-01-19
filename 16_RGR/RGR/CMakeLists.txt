@@ -3,7 +3,7 @@ project(RGR)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(RGR main.cpp Line.cpp Line.h Point.cpp Point.h Slice.cpp Slice.h Drawable.h Coordinate.h Shader.h Shader.cpp Drawable.cpp)
+add_executable(RGR main.cpp Point.cpp Point.h Slice.cpp Slice.h Drawable.h Coordinate.h Shader.h Shader.cpp Drawable.cpp Cube.cpp Cube.h CoordinateSystem.cpp CoordinateSystem.h)
 
 
 find_package(OpenGL REQUIRED)
