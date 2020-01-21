@@ -55,7 +55,7 @@ void DicomFileWrapper::saveTransformedImage(int width, int height, const unsigne
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1053)), std::to_string(rescaleSlope).c_str());
     newImage.getDataset()->putAndInsertUint8Array(DcmTagKey(0x7FE0, 0x0010), pixels, width * height);
 
-    char uid[100];
+    char uid[64];
     newImage.getDataset()->putAndInsertString(DcmTagKey(0x0020,0x000E), dcmGenerateUniqueIdentifier(uid)); //Series instance UID
     newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0011), 7651); //Series Number
     newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0013), 1); //Instance Number
