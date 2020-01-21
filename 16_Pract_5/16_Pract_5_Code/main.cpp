@@ -144,5 +144,3 @@ void displayScanPosition(int x, int y) {
         scanPositionText->setText(std::string("Scan Position: Out of bounds"));
     }
 }
-
-

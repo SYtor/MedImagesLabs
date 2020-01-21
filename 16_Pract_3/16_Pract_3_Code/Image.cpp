@@ -83,7 +83,7 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imageWidth, imageHeight, 0, GL_RED, GL_UNSIGNED_BYTE, pixelData);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imageWidth, imageHeight, 0, GL_RED, GL_UNSIGNED_BYTE, pixelData);
 
     glUseProgram(shader->getReference());
     glUniform1i(glGetUniformLocation(shader->getReference(), "texture1"), 0);
@@ -95,11 +95,9 @@ Image::~Image() {
 }
 
 void Image::render() {
-
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, texture);
     glUseProgram(shader->getReference());
     glBindVertexArray(vao);
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-
 }

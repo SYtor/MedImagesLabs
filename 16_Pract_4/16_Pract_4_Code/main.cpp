@@ -32,6 +32,7 @@ struct DisplayMode {
 
 std::vector<DisplayMode> modes;
 int currentDisplayMode = 0;
+std::pair<float, float> rescaleMinMax;
 
 void initDrawableObjects(const std::string &imagePath);
 const unsigned char* applyRescale(float rescaleSlope, float rescaleIntercept, const unsigned char* pixels);
@@ -49,7 +50,7 @@ int main(int argc, char *argv[]) {
     glutInitContextVersion(4, 0);
     glutInitWindowPosition(100, 100);
     glutInitWindowSize(windowWidth, windowHeight);
-    glutCreateWindow("Lab3");
+    glutCreateWindow("Lab4");
     glewInit();
 
     initDrawableObjects(imagePath);
@@ -138,15 +139,19 @@ void initDrawableObjects(const std::string &imagePath) {
 
 const unsigned char* applyRescale(float rescaleSlope, float rescaleIntercept, const unsigned char* pixels) {
     auto appliedRescalePixelData = new unsigned char[imageWidth * imageHeight];
+    auto tempFloatArray = new float[imageWidth * imageHeight];
+    float min = 10000.0f, max = 0.0f;
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        double color = *(pixels + i);
-        color = rescaleSlope * (float) color + rescaleIntercept;
-        *(appliedRescalePixelData + i) = (unsigned char) color;
+        float color = *(pixels + i);
+        color = rescaleSlope * color + rescaleIntercept;
+        *(tempFloatArray + i) = color;
+        if (color < min) min = color;
+        if (color > max) max = color;
     }
-    auto tempRescaleMinMax = DicomFileWrapper::findMinMaxPixel(imageWidth, imageHeight, appliedRescalePixelData);
+    rescaleMinMax = std::pair(min, max);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
-        auto color = *(appliedRescalePixelData + i);
-        color = 255.0f * (color - tempRescaleMinMax.first) / (tempRescaleMinMax.second - tempRescaleMinMax.first);
+        auto color = *(tempFloatArray + i);
+        color = 255.0f * (color - min) / (max - min);
         *(appliedRescalePixelData + i) = (unsigned char) color;
     }
     return appliedRescalePixelData;
@@ -157,10 +162,19 @@ void updateTextLabels(const DisplayMode& displayMode) {
     auto builder = TextRendererBuilder(windowWidth, windowHeight);
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 16).setText(displayMode.helpMessage).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 32).setText(std::string("Image Type: ").append(displayMode.imageType)).build());
-    //auto pixelTypeRenderer = builder.setPosition(0, windowHeight - 48).setText(helpMessage).build();
+    renderableObjects.push_back(builder.setPosition(0, windowHeight - 48).setText("Pixel Type: UNSIGNED_BYTE").build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 64).setText(std::string("Pixel Range(min-max): ").append(displayMode.pixelRange)).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 96).setText(std::string("Rescale Intercept: ").append(displayMode.rescaleIntercept)).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 112).setText(std::string("Rescale Slope: ").append(displayMode.rescaleSlope)).build());
+    if (modes.size() == 1 || currentDisplayMode == 2)
+        renderableObjects.push_back(
+                builder.setPosition(0, windowHeight - 138).setText(
+                        std::string("Rescale Pixel Range(min-max): ")
+                        .append(std::to_string(rescaleMinMax.first))
+                        .append("-")
+                        .append(std::to_string(rescaleMinMax.second)
+                        )).build()
+        );
 }
 
 

@@ -51,11 +51,17 @@ double DicomFileWrapper::getDouble(const DcmTagKey &dcmTagKey) {
 void DicomFileWrapper::saveTransformedImage(int width, int height, const unsigned char* pixels, double rescaleSlope, double rescaleIntercept) {
     DcmFileFormat newImage(*dcmFileFormat);
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0008, 0x0008)), "DERIVED\\SECONDARY\\MPR");
-    char uid[100];
-    dcmGenerateUniqueIdentifier(uid);
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1052)), std::to_string(rescaleIntercept).c_str());
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1053)), std::to_string(rescaleSlope).c_str());
     newImage.getDataset()->putAndInsertUint8Array(DcmTagKey(0x7FE0, 0x0010), pixels, width * height);
+
+    char uid[100];
+    newImage.getDataset()->putAndInsertString(DcmTagKey(0x0020,0x000E), dcmGenerateUniqueIdentifier(uid)); //Series instance UID
+    newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0011), 7651); //Series Number
+    newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0013), 1); //Instance Number
+    newImage.getDataset()->putAndInsertString(DcmTagKey(0x0020,0x0016), dcmGenerateUniqueIdentifier(uid)); //SOP instance UID
+    newImage.getDataset()->putAndInsertString(DcmTagKey(0x0002,0x0003), uid); //Media Storage SOP instance UID
+
     newImage.saveFile("derived.dcm");
 }
 

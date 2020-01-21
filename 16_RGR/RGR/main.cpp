@@ -61,7 +61,7 @@ void initDrawableObjects() {
     Coordinate pixelPhysicalLocation{
             imagePositionSlice25.x + pixelCoords.y * imageOrientationSlice25[0] * pixelSpacing.y + pixelCoords.x * imageOrientationSlice25[3] * pixelSpacing.x,
             imagePositionSlice25.y + pixelCoords.y * imageOrientationSlice25[1] * pixelSpacing.y + pixelCoords.x * imageOrientationSlice25[4] * pixelSpacing.x,
-            imagePositionSlice25.z
+            imagePositionSlice25.z + pixelCoords.y * imageOrientationSlice25[2] * pixelSpacing.y + pixelCoords.x * imageOrientationSlice25[5] * pixelSpacing.x
     };
     printf("Pixel location(x,y,z) = (%.2f,%.2f,%.2f) ", pixelPhysicalLocation.x, pixelPhysicalLocation.y, pixelPhysicalLocation.z);
 
@@ -70,7 +70,7 @@ void initDrawableObjects() {
     Coordinate slice25EndPoint{
             imagePositionSlice25.x + rows * imageOrientationSlice25[0] * pixelSpacing.y + columns * imageOrientationSlice25[3] * pixelSpacing.x,
             imagePositionSlice25.y + rows * imageOrientationSlice25[1] * pixelSpacing.y + columns * imageOrientationSlice25[4] * pixelSpacing.x,
-            imagePositionSlice25.z
+            imagePositionSlice25.z + rows * imageOrientationSlice25[2] * pixelSpacing.y + columns * imageOrientationSlice25[5] * pixelSpacing.x
     };
 
     float scanZoneHeight = abs(scanBottomZ - imagePositionSlice1.z) + sliceThickness;
@@ -144,7 +144,7 @@ void keyboardInput(unsigned char key, int x, int y) {
             updateViewPoint(glm::vec3(0, 1500,0));
             break;
         case 'z':
-            updateViewPoint(glm::vec3(600, 0,600));
+            updateViewPoint(glm::vec3(1, 1,1000));
             break;
         case 'd':
             updateViewPoint(glm::vec3(1200));
