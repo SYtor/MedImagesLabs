@@ -11,6 +11,7 @@ private:
 public:
     DicomFileWrapper(const std::string &imagePath);
     unsigned short getUShort(const DcmTagKey &dcmTagKey);
+    double getDouble(const DcmTagKey& dcmTagKey);
     OFVector<double> getDoubleArray(const DcmTagKey &dcmTagKey, unsigned long size);
     const unsigned char* getUCharArray(const DcmTagKey &dcmTagKey);
 

@@ -1,18 +1,19 @@
 #include "DicomFileWrapper.h"
 
 DicomFileWrapper::DicomFileWrapper(const std::string &imagePath) {
-
     dcmFileFormat = new DcmFileFormat();
     dcmFileFormat->loadFile(imagePath.c_str());
-
-    auto bitsAllocated = getUShort(DcmTagKey(0x0028, 0x0100));
-    if (bitsAllocated != 8)
-        throw std::runtime_error("Image not supported");
 }
 
 unsigned short DicomFileWrapper::getUShort(const DcmTagKey &dcmTagKey) {
     unsigned short value = 0;
     dcmFileFormat->getDataset()->findAndGetUint16(dcmTagKey, value);
+    return value;
+}
+
+double DicomFileWrapper::getDouble(const DcmTagKey &dcmTagKey) {
+    Float64 value = 0;
+    dcmFileFormat->getDataset()->findAndGetFloat64(dcmTagKey, value);
     return value;
 }
 

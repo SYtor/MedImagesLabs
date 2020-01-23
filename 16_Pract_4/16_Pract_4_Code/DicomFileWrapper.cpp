@@ -1,15 +1,8 @@
 #include "DicomFileWrapper.h"
 
-#include "DicomFileWrapper.h"
-
 DicomFileWrapper::DicomFileWrapper(const std::string &imagePath) {
-
     dcmFileFormat = new DcmFileFormat();
     dcmFileFormat->loadFile(imagePath.c_str());
-
-    auto bitsAllocated = getUShort(DcmTagKey(0x0028, 0x0100));
-    if (bitsAllocated != 8)
-        throw std::runtime_error("Image not supported");
 }
 
 DicomFileWrapper::~DicomFileWrapper() {
@@ -22,15 +15,15 @@ unsigned short DicomFileWrapper::getUShort(const DcmTagKey &dcmTagKey) {
     return value;
 }
 
-std::string DicomFileWrapper::getString(const DcmTagKey &dcmTagKey) {
-    OFString value;
-    dcmFileFormat->getDataset()->findAndGetOFString(dcmTagKey, value);
-    return std::string(value.c_str());
-}
-
 const unsigned char *DicomFileWrapper::getUCharArray(const DcmTagKey &dcmTagKey) {
     const unsigned char *value;
     dcmFileFormat->getDataset()->findAndGetUint8Array(dcmTagKey, value);
+    return value;
+}
+
+const float *DicomFileWrapper::getFloatArray(const DcmTagKey &dcmTagKey) {
+    const float *value;
+    dcmFileFormat->getDataset()->findAndGetFloat32Array(dcmTagKey, value);
     return value;
 }
 
@@ -48,16 +41,17 @@ double DicomFileWrapper::getDouble(const DcmTagKey &dcmTagKey) {
     return value;
 }
 
-void DicomFileWrapper::saveTransformedImage(int width, int height, const unsigned char* pixels, double rescaleSlope, double rescaleIntercept) {
+void DicomFileWrapper::saveTransformedImage(int width, int height, const float* pixels, double rescaleSlope, double rescaleIntercept) {
     DcmFileFormat newImage(*dcmFileFormat);
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0008, 0x0008)), "DERIVED\\SECONDARY\\MPR");
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1052)), std::to_string(rescaleIntercept).c_str());
     newImage.getDataset()->putAndInsertString(DcmTag(DcmTagKey(0x0028, 0x1053)), std::to_string(rescaleSlope).c_str());
-    newImage.getDataset()->putAndInsertUint8Array(DcmTagKey(0x7FE0, 0x0010), pixels, width * height);
+    newImage.getDataset()->putAndInsertFloat32Array(DcmTagKey(0x7FE0,0x0008), pixels, width * height);
+    newImage.getDataset()->putAndInsertUint16(DcmTag(DcmTagKey(0x0028, 0x0100)), 32);
 
     char uid[64];
     newImage.getDataset()->putAndInsertString(DcmTagKey(0x0020,0x000E), dcmGenerateUniqueIdentifier(uid)); //Series instance UID
-    newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0011), 7651); //Series Number
+    newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0011), 1); //Series Number
     newImage.getDataset()->putAndInsertUint16(DcmTagKey(0x0200,0x0013), 1); //Instance Number
     newImage.getDataset()->putAndInsertString(DcmTagKey(0x0020,0x0016), dcmGenerateUniqueIdentifier(uid)); //SOP instance UID
     newImage.getDataset()->putAndInsertString(DcmTagKey(0x0002,0x0003), uid); //Media Storage SOP instance UID

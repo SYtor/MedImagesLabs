@@ -1,6 +1,6 @@
 #include "Image.h"
 
-Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData) {
+Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, GLenum pixelType, const void *pixelData) {
 
     float vertexes[] = {
             //Vertices      //Texture Coords
@@ -81,7 +81,7 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imageWidth, imageHeight, 0, GL_RED, GL_UNSIGNED_BYTE, pixelData);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imageWidth, imageHeight, 0, GL_RED, pixelType, pixelData);
 
     glUseProgram(shader->getReference());
     glUniform1i(glGetUniformLocation(shader->getReference(), "texture1"), 0);

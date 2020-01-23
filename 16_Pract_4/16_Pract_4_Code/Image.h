@@ -15,7 +15,7 @@ private:
     GLuint ebo;
     GLuint texture;
 public:
-    Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char* pixelData);
+    Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, GLenum pixelType, const void* pixelData);
     ~Image();
     void render() override;
 };

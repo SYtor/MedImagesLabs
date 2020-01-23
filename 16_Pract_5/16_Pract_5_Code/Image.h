@@ -23,7 +23,7 @@ private:
     void updateModelMatrix();
 
 public:
-    Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData);
+    Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, GLenum pixelType, const void *pixelData, bool swapX, bool swapY);
     ~Image();
 
     void setPosition(float x, float y);

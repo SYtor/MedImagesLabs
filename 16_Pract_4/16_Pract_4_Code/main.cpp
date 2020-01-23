@@ -23,19 +23,20 @@ const int lowerPixelBound = 85;
 struct DisplayMode {
     std::string helpMessage;
     std::string imageType;
+    std::string pixelType;
     std::string pixelRange;
     std::string rescaleSlope;
     std::string rescaleIntercept;
-    const unsigned char* pixels;
     Image* image;
 };
 
 std::vector<DisplayMode> modes;
 int currentDisplayMode = 0;
 std::pair<float, float> rescaleMinMax;
+const float* scaledPixels = nullptr;
 
 void initDrawableObjects(const std::string &imagePath);
-const unsigned char* applyRescale(float rescaleSlope, float rescaleIntercept, const unsigned char* pixels);
+const float* applyRescale(float rescaleSlope, float rescaleIntercept, const unsigned char* pixels);
 void updateTextLabels(const DisplayMode& displayMode);
 void render();
 void keyboardInput(unsigned char key, int x, int y);
@@ -69,7 +70,6 @@ void initDrawableObjects(const std::string &imagePath) {
 
     imageWidth = dicomFileWrapper->getUShort(DcmTagKey(0x0028, 0x0011));
     imageHeight = dicomFileWrapper->getUShort(DcmTagKey(0x0028, 0x0010));
-    auto originalPixelData = dicomFileWrapper->getUCharArray(DcmTagKey(0x7FE0, 0x0010));
 
     DcmCodeString imageTypeCodeString = dicomFileWrapper->getCodeString(DcmTagKey(0x0008, 0x0008));
     OFString pixelDataCharacteristic;
@@ -81,21 +81,25 @@ void initDrawableObjects(const std::string &imagePath) {
     auto rescaleInterceptString = std::to_string(rescaleIntercept);
     auto rescaleSlopeString = std::to_string(rescaleSlope);
 
-    originalPixelData = applyRescale(rescaleSlope, rescaleIntercept, originalPixelData);
-    auto minMaxPixels = DicomFileWrapper::findMinMaxPixel(imageWidth, imageHeight, originalPixelData);
-
     auto defaultHelpMessage = "Controls: D - next, A - previous, S - save derived";
     DisplayMode originalDisplayMode;
     originalDisplayMode.helpMessage = defaultHelpMessage;
     originalDisplayMode.imageType = imageType;
-    originalDisplayMode.pixelRange = std::to_string(minMaxPixels.first).append("-").append(std::to_string(minMaxPixels.second));
     originalDisplayMode.rescaleSlope = rescaleSlopeString;
     originalDisplayMode.rescaleIntercept = rescaleInterceptString;
-    originalDisplayMode.pixels = originalPixelData;
-    originalDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, originalPixelData);
-    modes.push_back(originalDisplayMode);
 
-    if (imageType == "ORIGINAL") {
+    if (imageType == "ORIGINAL" && rescaleIntercept == 0 && rescaleSlope == 1) {
+
+        auto bitsAllocated = dicomFileWrapper->getUShort(DcmTagKey(0x0028, 0x0100));
+        if (bitsAllocated != 8)
+            throw std::runtime_error("Image not supported");
+
+        auto originalPixelData = dicomFileWrapper->getUCharArray(DcmTagKey(0x7FE0, 0x0010));
+        auto minMaxPixels = DicomFileWrapper::findMinMaxPixel(imageWidth, imageHeight, originalPixelData);
+        originalDisplayMode.pixelRange = std::to_string(minMaxPixels.first).append("-").append(std::to_string(minMaxPixels.second));
+        originalDisplayMode.pixelType = "GL_UNSIGNED_BYTE";
+        originalDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, GL_UNSIGNED_BYTE, originalPixelData);
+        modes.push_back(originalDisplayMode);
 
         auto updatedRangePixelData = new unsigned char[imageWidth * imageHeight];
         for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -111,34 +115,43 @@ void initDrawableObjects(const std::string &imagePath) {
         updatedRangeDisplayMode.imageType = "Temp. Applied pixel range";
         updatedRangeDisplayMode.pixelRange = std::to_string(updatedRangeMinMax.first).append("-").append(std::to_string(updatedRangeMinMax.second));
         updatedRangeDisplayMode.rescaleSlope = originalDisplayMode.rescaleSlope;
+        updatedRangeDisplayMode.pixelType = "GL_UNSIGNED_BYTE";
         updatedRangeDisplayMode.rescaleIntercept = originalDisplayMode.rescaleIntercept;
-        updatedRangeDisplayMode.pixels = updatedRangePixelData;
-        updatedRangeDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, updatedRangePixelData);
+        updatedRangeDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, GL_UNSIGNED_BYTE, updatedRangePixelData);
         modes.push_back(updatedRangeDisplayMode);
 
-        auto appliedRescalePixelData = applyRescale(givenRescaleSlope, givenRescaleIntercept, updatedRangePixelData);
-        auto appliedRescaleMinMax = DicomFileWrapper::findMinMaxPixel(imageWidth, imageHeight, appliedRescalePixelData);
+        scaledPixels = applyRescale(givenRescaleSlope, givenRescaleIntercept, updatedRangePixelData);
 
         DisplayMode appliedRescaleDisplayMode;
         appliedRescaleDisplayMode.helpMessage = defaultHelpMessage;
         appliedRescaleDisplayMode.imageType = "Temp. Applied rescale";
-        appliedRescaleDisplayMode.pixelRange = std::to_string(appliedRescaleMinMax.first).append("-").append(std::to_string(appliedRescaleMinMax.second));
+        appliedRescaleDisplayMode.pixelRange = std::to_string(rescaleMinMax.first).append("-").append(std::to_string(rescaleMinMax.second));
         appliedRescaleDisplayMode.rescaleSlope = std::to_string(givenRescaleSlope);
         appliedRescaleDisplayMode.rescaleIntercept = std::to_string(givenRescaleIntercept);
-        appliedRescaleDisplayMode.pixels = appliedRescalePixelData;
-        appliedRescaleDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, appliedRescalePixelData);
+        appliedRescaleDisplayMode.pixelType = "GL_FLOAT";
+        appliedRescaleDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, GL_FLOAT, scaledPixels);
         modes.push_back(appliedRescaleDisplayMode);
 
     } else {
-        modes.at(0).helpMessage = "Displaying derived image";
+        originalDisplayMode.pixelType = "GL_FLOAT";
+        auto pixels = dicomFileWrapper->getFloatArray(DcmTagKey(0x7FE0,0x0008));
+        float min = 10000.0f, max = 0.0f;
+        for (int i = 0; i < imageWidth * imageHeight; i++) {
+            float color = *(pixels + i);
+            if (color < min) min = color;
+            if (color > max) max = color;
+        }
+        originalDisplayMode.pixelRange = std::to_string(min).append("-").append(std::to_string(max));
+        originalDisplayMode.image = new Image(windowWidth, windowHeight, imageWidth, imageHeight, GL_FLOAT, pixels);
+        originalDisplayMode.helpMessage = "Displaying derived image";
+        modes.push_back(originalDisplayMode);
     }
 
     updateTextLabels(modes.at(currentDisplayMode));
 
 }
 
-const unsigned char* applyRescale(float rescaleSlope, float rescaleIntercept, const unsigned char* pixels) {
-    auto appliedRescalePixelData = new unsigned char[imageWidth * imageHeight];
+const float* applyRescale(float rescaleSlope, float rescaleIntercept, const unsigned char* pixels) {
     auto tempFloatArray = new float[imageWidth * imageHeight];
     float min = 10000.0f, max = 0.0f;
     for (int i = 0; i < imageWidth * imageHeight; i++) {
@@ -151,10 +164,10 @@ const unsigned char* applyRescale(float rescaleSlope, float rescaleIntercept, co
     rescaleMinMax = std::pair(min, max);
     for (int i = 0; i < imageWidth * imageHeight; i++) {
         auto color = *(tempFloatArray + i);
-        color = 255.0f * (color - min) / (max - min);
-        *(appliedRescalePixelData + i) = (unsigned char) color;
+        color = (color - min) / (max - min);
+        *(tempFloatArray + i) = color;
     }
-    return appliedRescalePixelData;
+    return tempFloatArray;
 }
 
 void updateTextLabels(const DisplayMode& displayMode) {
@@ -162,19 +175,10 @@ void updateTextLabels(const DisplayMode& displayMode) {
     auto builder = TextRendererBuilder(windowWidth, windowHeight);
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 16).setText(displayMode.helpMessage).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 32).setText(std::string("Image Type: ").append(displayMode.imageType)).build());
-    renderableObjects.push_back(builder.setPosition(0, windowHeight - 48).setText("Pixel Type: UNSIGNED_BYTE").build());
+    renderableObjects.push_back(builder.setPosition(0, windowHeight - 48).setText(std::string("Pixel Type:").append(displayMode.pixelType)).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 64).setText(std::string("Pixel Range(min-max): ").append(displayMode.pixelRange)).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 96).setText(std::string("Rescale Intercept: ").append(displayMode.rescaleIntercept)).build());
     renderableObjects.push_back(builder.setPosition(0, windowHeight - 112).setText(std::string("Rescale Slope: ").append(displayMode.rescaleSlope)).build());
-    if (modes.size() == 1 || currentDisplayMode == 2)
-        renderableObjects.push_back(
-                builder.setPosition(0, windowHeight - 138).setText(
-                        std::string("Rescale Pixel Range(min-max): ")
-                        .append(std::to_string(rescaleMinMax.first))
-                        .append("-")
-                        .append(std::to_string(rescaleMinMax.second)
-                        )).build()
-        );
 }
 
 
@@ -209,7 +213,7 @@ void keyboardInput(unsigned char key, int x, int y) {
             break;
         }
         case 's':
-            dicomFileWrapper->saveTransformedImage(imageWidth, imageHeight, modes.at(1).pixels, givenRescaleSlope, givenRescaleIntercept);
+            dicomFileWrapper->saveTransformedImage(imageWidth, imageHeight, scaledPixels, givenRescaleSlope, givenRescaleIntercept);
             std::cout << "Transformed image was saved to file: derived.dcm" << std::endl;
             break;
     }

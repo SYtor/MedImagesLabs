@@ -1,13 +1,36 @@
 #include "Image.h"
 
-Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, const unsigned char *pixelData) {
+Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight, GLenum pixelType, const void *pixelData, bool swapX, bool swapY) {
+
+    float textCoord[4][2] = {
+            {0, 1},
+            {1, 1},
+            {1, 0},
+            {0, 0},
+    };
+    if (swapX) {
+        for (int i = 0; i < 4; i++) {
+            if(textCoord[i][0] == 0)
+                textCoord[i][0] = 1;
+            else
+                textCoord[i][0] = 0;
+        }
+    }
+    if (swapY) {
+        for (int i = 0; i < 4; i++) {
+            if(textCoord[i][1] == 0)
+                textCoord[i][1] = 1;
+            else
+                textCoord[i][1] = 0;
+        }
+    }
 
     float vertexes[] = {
             //Vertices      //Texture Coords
-            -0.5, -0.5,     0, 1,
-            0.5, -0.5,      1, 1,
-            0.5, 0.5,       1, 0,
-            -0.5, 0.5,      0, 0
+            -0.5, -0.5,     textCoord[0][0], textCoord[0][1],
+            0.5, -0.5,      textCoord[1][0], textCoord[1][1],
+            0.5, 0.5,       textCoord[2][0], textCoord[2][1],
+            -0.5, 0.5,      textCoord[3][0], textCoord[3][1]
     };
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
@@ -84,7 +107,7 @@ Image::Image(int windowWidth, int windowHeight, int imageWidth, int imageHeight,
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imageWidth, imageHeight, 0, GL_RED, GL_UNSIGNED_BYTE, pixelData);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, imageWidth, imageHeight, 0, GL_RED, pixelType, pixelData);
 
     glUseProgram(shader->getReference());
     glUniform1i(glGetUniformLocation(shader->getReference(), "texture1"), 0);
